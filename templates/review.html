@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        textarea {
+            width: 90%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+        }
+        button {
+            background: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #FFC107;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Movie Sentiment Analysis</h1>
+        <p>Enter your movie review below:</p>
+        <form action="/analyze" method="POST">
+            <textarea name="review" placeholder="Write your movie review here..."></textarea><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if sentiment %}
+        <h2>Sentiment Result: {{ sentiment }}</h2>
+        {% endif %}
+    </div>
+
+</body>
+</html>
